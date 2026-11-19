@@ -1,0 +1,31 @@
+# Build & NuGet output
+[Bb]in/
+[Oo]bj/
+[Pp]ublish/
+*.nupkg
+*.snupkg
+*.dll
+*.exe
+*.pdb
+
+# Visual Studio / VS Code / JetBrains Rider state
+.vs/
+.vscode/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.csproj.user
+
+# OS & temporary files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.tmp
+*.temp
+*.log
+
+# Encryption keys & local vault artifacts (never commit keys or raw/encrypted test data)
+*.dpapi
+*.key
+*.enc
