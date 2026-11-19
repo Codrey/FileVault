@@ -2,7 +2,7 @@ namespace FileVault.Options;
 
 public sealed class VaultOptions
 {
-    public string SectionName = "Vault";
+    public const string SectionName = "Vault";
 
     public string WatchPath { get; set; } = @"C:\FileVault\Inbox";
     public string VaultPath { get; set; } = @"C:\FileVault\Vault";
