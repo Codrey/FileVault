@@ -38,7 +38,20 @@ if (OperatingSystem.IsWindows())
     });
 }
 
-// builder.Services.AddHostedService<Worker>();
 var host = builder.Build();
 //host.Run();
+
+// support one shot decryption mode:
+// dotnet run -- --decrypt "C:\FileVault\Vault\test-note.txt.enc" "C:\FileVault\Restored\test-note.txt"// builder.Services.AddHostedService<Worker>();
+if (args.Length >= 3 && args[0].Equals("--decrypt", StringComparison.OrdinalIgnoreCase))
+{
+    var crypto = host.Services.GetRequiredService<CryptoCompressionService>();
+    await crypto.DecryptFileAsync(args[1], args[2]);
+    Console.WriteLine($"Decrypted '{args[1]}' -> '{args[2]}'");
+    return;
+}
+
 await host.RunAsync();
+
+
+
